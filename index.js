@@ -5,24 +5,24 @@ import { NativeModules } from 'react-native';
 
 let mounted = 0;
 
-export default class KeepAwake extends Component<{}> {
+export default class TurnScreenOn extends Component<{}> {
   static activate() {
-    NativeModules.KCKeepAwake.activate();
+    NativeModules.TurnScreenOn.activate();
   }
 
   static deactivate() {
-    NativeModules.KCKeepAwake.deactivate();
+    NativeModules.TurnScreenOn.deactivate();
   }
 
   componentDidMount() {
     mounted++;
-    KeepAwake.activate();
+    TurnScreenOn.activate();
   }
 
   componentWillUnmount() {
     mounted--;
     if (!mounted) {
-      KeepAwake.deactivate();
+      TurnScreenOn.deactivate();
     }
   }
 
