@@ -1,16 +1,16 @@
 {
-  "name": "@elelyatar/react-native-keep-awake",
+  "name": "@elelyatar/react-native-turn-screen-on",
   "version": "1.0.0",
   "description": "Turn screen on.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elelyatar/react-native-keep-awake.git"
+    "url": "git+https://github.com/elelyatar/react-native-turn-screen-on.git"
   },
   "bugs": {
-    "url": "https://github.com/elelyatar/react-native-keep-awake/issues"
+    "url": "https://github.com/elelyatar/react-native-turn-screen-on/issues"
   },
-  "homepage": "https://github.com/elelyatar/react-native-keep-awake#readme",
+  "homepage": "https://github.com/elelyatar/react-native-turn-screen-on#readme",
   "keywords": [
     "react-native",
     "ios",
