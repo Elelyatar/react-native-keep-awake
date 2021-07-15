@@ -1,7 +1,7 @@
 {
   "name": "@elelyatar/react-native-turn-screen-on",
-  "version": "1.0.0",
-  "description": "Turn screen on.",
+  "version": "1.0.2",
+  "description": "Tools.",
   "main": "index.js",
   "repository": {
     "type": "git",

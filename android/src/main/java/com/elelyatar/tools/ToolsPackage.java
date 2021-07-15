@@ -1,7 +1,7 @@
 // Adapted from
 // https://github.com/corbt/react-native-keep-awake
 
-package com.elelyatar.turnscreenon;
+package com.elelyatar.tools;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -11,12 +11,13 @@ import com.facebook.react.uimanager.ViewManager;
 
 import java.util.*;
 
-public class TurnScreenOnPackage implements ReactPackage {
+public class ToolsPackage implements ReactPackage {
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
         modules.add(new TurnScreenOnModule(reactContext));
+        modules.add(new PushForegroundModule(reactContext));
         return modules;
     }
 
