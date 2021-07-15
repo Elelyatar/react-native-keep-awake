@@ -18,8 +18,12 @@ export default class Tools extends Component<{}> {
     return NativeModules.PushForeground.getCurrentForeground();
   }
 
-  static setForeground() {
-    NativeModules.PushForeground.setForeground();
+  static setForegroundActivity(activityToStart) {
+    NativeModules.PushForeground.setForegroundActivity(activityToStart);
+  }
+
+  static setForegroundPackage(packageName) {
+    NativeModules.PushForeground.setForegroundPackage(packageName);
   }
 
   componentDidMount() {

@@ -4,5 +4,6 @@ export default class Tools extends React.Component {
   static activate(): void
   static deactivate(): void
   static getCurrentForeground(): string
-  static setForeground(): void
+  static setForegroundActivity(activityToStart): void
+  static setForegroundPackage(packageName): void
 }
