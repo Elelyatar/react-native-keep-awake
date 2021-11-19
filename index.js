@@ -14,6 +14,10 @@ export default class Tools extends Component<{}> {
     NativeModules.TurnScreenOn.deactivate();
   }
 
+  static isScreenOn(callback) {
+    NativeModules.TurnScreenOn.isScreenOn(callback);
+  }
+
   static getCurrentForeground() {
     return NativeModules.PushForeground.getCurrentForeground();
   }

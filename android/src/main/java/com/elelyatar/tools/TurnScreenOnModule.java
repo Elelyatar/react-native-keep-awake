@@ -9,7 +9,10 @@ import android.os.Build;
 import android.os.PowerManager;
 import android.util.Log;
 import android.view.WindowManager;
+import android.hardware.display.DisplayManager;
+import android.view.Display;
 
+import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -72,6 +75,25 @@ public class TurnScreenOnModule extends ReactContextBaseJavaModule {
                     activity.getWindow().clearFlags(android.view.WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
                 }
             });
+        }
+    }
+
+    @ReactMethod
+    public void isScreenOn(Callback callback) {
+        ReactApplicationContext context = getReactApplicationContext();
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
+            DisplayManager dm = (DisplayManager) context.getSystemService(Context.DISPLAY_SERVICE);
+            boolean screenOn = false;
+            for (Display display : dm.getDisplays()) {
+                if (display.getState() != Display.STATE_OFF) {
+                    screenOn = true;
+                }
+            }
+            callback.invoke(screenOn);
+        } else {
+            PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+            //noinspection deprecation
+            callback.invoke(pm.isScreenOn());
         }
     }
 }
